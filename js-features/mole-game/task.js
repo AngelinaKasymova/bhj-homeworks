@@ -8,14 +8,19 @@ holes.forEach((hole) => {
             deadCounter.textContent = Number(deadCounter.textContent) + 1;
             if (deadCounter.textContent == 10) {
                 alert('Поздравляем! Вы победили!');
+                resetCounters();
             }
         } else {
             lostCounter.textContent = Number(lostCounter.textContent) + 1;
             if (lostCounter.textContent == 5) {
                 alert('Вы проиграли. Попробуйте еще раз.');
+                resetCounters();
             }
         }
     });
 });
 
-
+function resetCounters() {
+    deadCounter.textContent = 0;
+    lostCounter.textContent = 0;
+}
